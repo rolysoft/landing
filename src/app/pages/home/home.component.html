@@ -1,0 +1,51 @@
+<!--Navbar Start-->
+<nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-dark" (window:scroll)="windowScroll()"
+  id="navbar">
+  <div class="container">
+    <!-- LOGO -->
+    <a class="logo text-uppercase" href="/">
+      <img src="assets/images/valentina3.png" alt="" class="logo-dark" height="20" />
+    </a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+      aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" (click)="toggleMenu()">
+      <i class="mdi mdi-menu"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav ml-auto navbar-center" id="mySidenav">
+        <li class="nav-item" [ngClass]="{'active':currentSection === 'home'}">
+          <a [ngxScrollTo]="'#home'" href="javascript: void(0);" class="nav-link">Home</a>
+        </li>        
+        <li class="nav-item" [ngClass]="{'active':currentSection === 'modelo'}">
+          <a [ngxScrollTo]="'#modelo'" href="javascript: void(0);" class="nav-link">Mujeres</a>
+        </li>
+        <li class="nav-item" [ngClass]="{'active':currentSection === 'clients'}">
+          <a [ngxScrollTo]="'#clients'" href="javascript: void(0);" class="nav-link">Varones</a>
+        </li>
+        <li class="nav-item" [ngClass]="{'active':currentSection === 'pricing'}">
+          <a [ngxScrollTo]="'#pricing'" href="javascript: void(0);" class="nav-link">Niños</a>
+        </li>
+        <li class="nav-item" [ngClass]="{'active':currentSection === 'services'}">
+            <a [ngxScrollTo]="'#services'" href="javascript: void(0);" class="nav-link">Zapatos</a>
+          </li>
+      </ul>
+      <button class="btn btn-pink btn-rounded navbar-btn">Contactanos</button>
+
+    </div>
+  </div>
+</nav>
+<!-- Navbar End -->
+
+
+<div appScrollspy [spiedTags]="['SECTION']" (sectionChange)="onSectionChange($event)">
+  
+  
+
+  <!-- <app-services></app-services>
+  <app-features></app-features> -->
+  
+  <app-modelo></app-modelo>
+  <!-- <app-plans></app-plans> -->
+  <!-- <app-clients></app-clients> -->
+  <app-footer></app-footer>
+</div>
